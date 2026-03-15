@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Swelling Expert — Certified Lymphatic Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFFFF;
+    --warm-white: #EEF6F8;
+    --gold: #146C94;
+    --gold-light: #1A85B8;
+    --gold-pale: #C9F0F0;
+    --charcoal: #0D3D52;
+    --mid-grey: #5A7178;
+    --light-grey: #BFC9CC;
+    --border: #BFC9CC;
+    --navy: #146C94;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: #146C94; }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid-grey);
+    text-decoration: none;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover { color: #146C94; }
+
+  .nav-cta {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--gold);
+    border: none;
+    padding: 12px 28px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #146C94;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--charcoal);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #146C94;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--mid-grey);
+    max-width: 460px;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--charcoal);
+    border: none;
+    padding: 18px 40px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    background: transparent;
+    border: 1px solid var(--charcoal);
+    padding: 18px 40px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--charcoal);
+    color: var(--cream);
+    transform: translateY(-1px);
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.2s ease 0.4s both;
+  }
+
+  .hero-right-inner {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #EEF6F8 0%, #C9F0F0 50%, #9DD8E0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: radial-gradient(circle, var(--charcoal) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .hero-badge {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px;
+  }
+
+  .hero-badge-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid #146C94;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 40px;
+    position: relative;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-badge-circle::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(20,108,148,0.3);
+  }
+
+  .badge-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #146C94;
+    line-height: 1;
+  }
+
+  .badge-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-top: 4px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+  }
+
+  .hero-stat { text-align: center; }
+
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    display: block;
+  }
+
+  .hero-stat-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid-grey);
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    background: #0D3D52;
+    padding: 18px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    padding: 0 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .marquee-item::after {
+    content: '◆';
+    color: #C9F0F0;
+    font-size: 0.4rem;
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 120px 80px; }
+
+  .section-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #146C94;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+
+  .section-title em { font-style: italic; color: #146C94; }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--mid-grey);
+    max-width: 560px;
+    font-weight: 300;
+  }
+
+  /* ── OFFERINGS ── */
+  .offerings {
+    background: var(--warm-white);
+    padding: 120px 80px;
+  }
+
+  .offerings-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 80px;
+    align-items: end;
+  }
+
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .offering-card {
+    background: var(--cream);
+    padding: 60px 52px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+  }
+
+  .offering-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.4s ease;
+  }
+
+  .offering-card:hover { transform: translateY(-4px); }
+  .offering-card:hover::before { height: 100%; }
+
+  .offering-card.featured {
+    background: #146C94;
+    grid-column: span 1;
+  }
+
+  .offering-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 32px;
+    transition: color 0.3s;
+  }
+
+  .offering-card.featured .offering-number { color: rgba(255,255,255,0.08); }
+  .offering-card:hover .offering-number { color: var(--gold-pale); }
+
+  .offering-tag {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #146C94;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .offering-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+
+  .offering-card.featured .offering-name { color: var(--cream); }
+
+  .offering-desc {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--mid-grey);
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .offering-card.featured .offering-desc { color: rgba(255,255,255,0.8); }
+
+  .offering-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+
+  .price-from {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light-grey);
+  }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1;
+  }
+
+  .offering-card.featured .price-amount { color: #C9F0F0; }
+
+  .price-per {
+    font-size: 0.72rem;
+    color: var(--light-grey);
+    letter-spacing: 0.08em;
+  }
+
+  .offering-features {
+    list-style: none;
+    margin-bottom: 40px;
+  }
+
+  .offering-features li {
+    font-size: 0.82rem;
+    color: var(--mid-grey);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .offering-card.featured .offering-features li {
+    color: rgba(255,255,255,0.75);
+    border-bottom-color: rgba(255,255,255,0.15);
+  }
+
+  .offering-features li::before {
+    content: '—';
+    color: #146C94;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .btn-card {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    background: transparent;
+    border: 1px solid var(--charcoal);
+    padding: 14px 32px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-card:hover {
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+
+  .offering-card.featured .btn-card {
+    border-color: #C9F0F0;
+    color: #C9F0F0;
+  }
+
+  .offering-card.featured .btn-card:hover {
+    background: #C9F0F0;
+    color: #146C94;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how {
+    background: var(--cream);
+    padding: 120px 80px;
+  }
+
+  .how-inner {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .how-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 28px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .how-step:first-child { padding-top: 0; }
+  .how-step:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    transition: color 0.3s;
+  }
+
+  .how-step:hover .step-num { color: #146C94; }
+
+  .step-content {}
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+
+  .step-text {
+    font-size: 0.84rem;
+    line-height: 1.85;
+    color: var(--mid-grey);
+    font-weight: 300;
+  }
+
+  .how-visual {
+    position: sticky;
+    top: 120px;
+    background: var(--warm-white);
+    padding: 60px;
+    border: 1px solid var(--border);
+  }
+
+  .how-visual-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .visual-items { display: flex; flex-direction: column; gap: 20px; }
+
+  .visual-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--cream);
+    border-left: 2px solid var(--gold-pale);
+    transition: border-color 0.3s;
+  }
+
+  .visual-item:hover { border-left-color: #146C94; }
+
+  .vi-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .vi-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+
+  .vi-text {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--mid-grey);
+    font-weight: 300;
+  }
+
+  /* ── CONDITIONS ── */
+  .conditions {
+    background: var(--navy);
+    padding: 100px 80px;
+  }
+
+  .conditions-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 64px;
+    align-items: end;
+  }
+
+  .conditions-header .section-title { color: var(--cream); }
+  .conditions-header .section-subtitle { color: rgba(255,255,255,0.45); }
+  .conditions-header .section-eyebrow { color: var(--gold-light); }
+  .conditions-header .section-eyebrow::before { background: var(--gold-light); }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.07);
+  }
+
+  .condition-card {
+    background: var(--navy);
+    padding: 40px 32px;
+    border-top: 3px solid rgba(184,151,58,0.15);
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .condition-card:hover {
+    background: rgba(255,255,255,0.04);
+    border-top-color: #146C94;
+  }
+
+  .condition-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+
+  .condition-desc {
+    font-size: 0.8rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    background: #EEF6F8;
+    padding: 100px 80px;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .testimonials-header .section-eyebrow {
+    justify-content: center;
+  }
+
+  .testimonials-header .section-eyebrow::before { display: none; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(20,108,148,0.15);
+  }
+
+  .testimonial-card {
+    background: var(--cream);
+    padding: 48px 40px;
+  }
+
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #146C94;
+    margin-bottom: 20px;
+    display: block;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin-bottom: 28px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .author-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: #146C94;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .author-info {}
+
+  .author-name {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--charcoal);
+  }
+
+  .author-desc {
+    font-size: 0.72rem;
+    color: var(--mid-grey);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: #0D3D52;
+    padding: 120px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .cta-section .section-eyebrow {
+    justify-content: center;
+    color: #C9F0F0;
+  }
+
+  .cta-section .section-eyebrow::before { display: none; }
+
+  .cta-section .section-title {
+    color: var(--cream);
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  .cta-section .section-subtitle {
+    color: rgba(255,255,255,0.6);
+    max-width: 500px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-gold {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #0D3D52;
+    background: #C9F0F0;
+    border: none;
+    padding: 20px 48px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-gold:hover {
+    background: #FFFFFF;
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 20px 48px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-ghost:hover {
+    border-color: #146C94;
+    color: #146C94;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0D3D52;
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .footer-brand {}
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .footer-logo span { color: #146C94; }
+
+  .footer-tagline {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C9F0F0;
+    margin-bottom: 20px;
+  }
+
+  .footer-links { list-style: none; }
+
+  .footer-links li { margin-bottom: 12px; }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s;
+    letter-spacing: 0.03em;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    background: #0A2E3D;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.08em;
+    font-weight: 300;
+  }
+
+  .footer-badge {
+    font-size: 0.65rem;
+    color: #C9F0F0;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 18px 32px; }
+    .nav-links { display: none; }
+    section, .offerings, .how, .conditions, .testimonials, .cta-section { padding: 80px 32px; }
+    footer { padding: 50px 32px; grid-template-columns: 1fr; gap: 40px; }
+    .footer-bottom { padding: 18px 32px; flex-direction: column; gap: 8px; text-align: center; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 60px 32px; }
+    .hero-right { height: 320px; }
+    .hero-right-inner { position: relative; height: 100%; }
+    .offerings-header { grid-template-columns: 1fr; gap: 32px; }
+    .offerings-grid { grid-template-columns: 1fr; }
+    .how-inner { grid-template-columns: 1fr; }
+    .how-visual { position: relative; top: 0; }
+    .conditions-header { grid-template-columns: 1fr; gap: 24px; }
+    .conditions-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">The Swelling <span>Expert</span></a>
+  <ul class="nav-links">
+    <li><a href="#offerings">Programs</a></li>
+    <li><a href="back2life.html" target="_blank" style="color: #146C94; font-weight:600;">Back 2 Life</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#conditions">Conditions</a></li>
+    <li><a href="#testimonials">Results</a></li>
+  </ul>
+  <a href="https://calendly.com/admin-theswellingexpert/lymphatic-reset-group-session" target="_blank" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Lymphatic Wellness · South Florida & Virtual</div>
+    <h1>Reclaim<br>Your <em>Comfort.</em><br>Restore Flow.</h1>
+    <p class="hero-sub">Expert swelling relief and lymphatic wellness delivered through live virtual group sessions and a comprehensive self-care program you can follow from anywhere in the world.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/admin-theswellingexpert/lymphatic-reset-group-session" target="_blank" class="btn-primary">Join a Group Session</a>
+      <a href="https://theswellingexpert.gumroad.com/l/arcfu" target="_blank" class="btn-outline">Explore the Course</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hero-pattern"></div>
+      <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80" alt="Person relaxing with eyes closed practicing breathwork" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.35; mix-blend-mode:multiply;">
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Post-Surgical Recovery</span>
+    <span class="marquee-item">Lymphatic Wellness</span>
+    <span class="marquee-item">Virtual Group Sessions</span>
+    <span class="marquee-item">Swelling Relief</span>
+    <span class="marquee-item">Lipedema Care</span>
+    <span class="marquee-item">Venous Insufficiency</span>
+    <span class="marquee-item">Orthopedic Recovery</span>
+    <span class="marquee-item">Reconstructive Surgery</span>
+    <span class="marquee-item">Luxury Concierge Wellness</span>
+    <span class="marquee-item">Post-Surgical Recovery</span>
+    <span class="marquee-item">Lymphatic Wellness</span>
+    <span class="marquee-item">Virtual Group Sessions</span>
+    <span class="marquee-item">Swelling Relief</span>
+    <span class="marquee-item">Lipedema Care</span>
+    <span class="marquee-item">Venous Insufficiency</span>
+    <span class="marquee-item">Orthopedic Recovery</span>
+    <span class="marquee-item">Reconstructive Surgery</span>
+    <span class="marquee-item">Luxury Concierge Wellness</span>
+  </div>
+</div>
+
+<!-- OFFERINGS -->
+<div class="offerings" id="offerings">
+  <div class="offerings-header reveal">
+    <div>
+      <div class="section-eyebrow">Our Programs</div>
+      <h2 class="section-title">Two Pathways to <em>Relief</em></h2>
+    </div>
+    <p class="section-subtitle">Whether you prefer the energy of a live group or the flexibility of self-guided learning, both programs deliver the same evidence-based lymphatic expertise.</p>
+  </div>
+
+  <div class="offerings-grid">
+    <!-- Group Sessions -->
+    <div class="offering-card featured reveal reveal-delay-1" id="group">
+      <div class="offering-number">01</div>
+      <span class="offering-tag">Live Virtual</span>
+      <h3 class="offering-name">Lymphatic Reset<br>Group Sessions</h3>
+      <p class="offering-desc">Join our certified therapist live on Zoom for guided self-MLD techniques, lymphatic breathwork, and swelling reduction movements — all from the comfort of your home.</p>
+      <div class="offering-price">
+        <span class="price-from">From</span>
+        <span class="price-amount">$49</span>
+        <span class="price-per">/ per session</span>
+      </div>
+      <ul class="offering-features">
+        <li>Live Zoom session with certified therapist</li>
+        <li>Guided self-MLD technique instruction</li>
+        <li>Lymphatic breathwork & movement</li>
+        <li>Max 20 participants for personal attention</li>
+        <li>Session recording available 24 hrs</li>
+        <li>4-Week Program available ($197–$297)</li>
+      </ul>
+      <a href="https://calendly.com/admin-theswellingexpert/lymphatic-reset-group-session" target="_blank" class="btn-card">Reserve Your Spot</a>
+    </div>
+
+    <!-- Digital Course -->
+    <div class="offering-card reveal reveal-delay-2" id="course">
+      <div class="offering-number">02</div>
+      <span class="offering-tag">Self-Paced Course</span>
+      <h3 class="offering-name">Swelling Relief<br>at Home Protocol</h3>
+      <p class="offering-desc">A comprehensive digital program designed for post-surgical patients, lipedema sufferers, and anyone managing chronic swelling. Expert guidance available anytime, anywhere.</p>
+      <div class="offering-price">
+        <span class="price-from">From</span>
+        <span class="price-amount">$197</span>
+        <span class="price-per">/ one-time</span>
+      </div>
+      <ul class="offering-features">
+        <li>7 in-depth video modules</li>
+        <li>Self-MLD demonstration library</li>
+        <li>Compression garment selection guide</li>
+        <li>Nutrition & hydration protocols</li>
+        <li>Red flag recognition guide</li>
+        <li>Lifetime access & future updates</li>
+      </ul>
+      <a href="https://theswellingexpert.gumroad.com/l/arcfu" target="_blank" class="btn-card">Enroll Today</a>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how" id="how">
+  <div class="how-inner">
+    <div>
+      <div class="section-eyebrow reveal">How It Works</div>
+      <h2 class="section-title reveal reveal-delay-1">Simple Steps to <em>Lasting Relief</em></h2>
+      <div class="how-steps" style="margin-top: 48px;">
+        <div class="how-step reveal reveal-delay-1">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <div class="step-title">Choose Your Program</div>
+            <p class="step-text">Select a live group session and choose an available date that works for you, or enroll in the self-paced course for immediate on-demand access.</p>
+          </div>
+        </div>
+        <div class="how-step reveal reveal-delay-2">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <div class="step-title">Complete Your Intake</div>
+            <p class="step-text">A brief health questionnaire helps us understand your general wellness goals and any swelling concerns so you can get the most out of each group session.</p>
+          </div>
+        </div>
+        <div class="how-step reveal reveal-delay-3">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <div class="step-title">Begin Your Sessions</div>
+            <p class="step-text">Access your group Zoom session or start your course modules immediately. All techniques are clearly demonstrated and adapted for home practice.</p>
+          </div>
+        </div>
+        <div class="how-step reveal reveal-delay-4">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <div class="step-title">Experience the Difference</div>
+            <p class="step-text">With consistent practice of the techniques learned in each session, many participants begin noticing improvements in swelling, comfort, and overall mobility.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-visual reveal reveal-delay-2">
+      <div class="how-visual-title">What to Expect Each Session</div>
+      <div class="visual-items">
+        <div class="visual-item">
+          <div>
+            <div class="vi-title">Lymphatic Breathwork</div>
+            <p class="vi-text">Diaphragmatic breathing sequences that activate the thoracic duct and stimulate lymphatic flow throughout the body.</p>
+          </div>
+        </div>
+        <div class="visual-item">
+          <div>
+            <div class="vi-title">Self-MLD Techniques</div>
+            <p class="vi-text">Step-by-step manual lymphatic drainage movements you can perform on yourself, guided by a certified specialist in real time.</p>
+          </div>
+        </div>
+        <div class="visual-item">
+          <div>
+            <div class="vi-title">Evidence-Based Movement</div>
+            <p class="vi-text">Every technique taught in our sessions is grounded in evidence-based lymphatic science and adapted for safe, effective self-practice at home.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONDITIONS -->
+<div class="conditions" id="conditions">
+  <div class="conditions-header reveal">
+    <div>
+      <div class="section-eyebrow">Who We Serve</div>
+      <h2 class="section-title" style="color:var(--cream);">Who Can <em style="color:#C9F0F0;">Benefit</em></h2>
+    </div>
+    <p class="section-subtitle">Our virtual programs are designed for a wide range of swelling-related conditions, from post-surgical recovery to chronic lymphatic concerns and lifestyle-related swelling.</p>
+  </div>
+
+  <div class="conditions-grid">
+    <div class="condition-card reveal reveal-delay-1">
+      <div class="condition-name">Post-Surgical Swelling</div>
+      <p class="condition-desc">Orthopedic, reconstructive, and aesthetic surgery recovery. Hip/knee replacements, BBL, tummy tuck, mastectomy, and more.</p>
+    </div>
+    <div class="condition-card reveal reveal-delay-2">
+      <div class="condition-name">Lipedema</div>
+      <p class="condition-desc">Chronic bilateral leg swelling and pain. Conservative management strategies to reduce discomfort and slow progression.</p>
+    </div>
+    <div class="condition-card reveal reveal-delay-3">
+      <div class="condition-name">Venous Insufficiency</div>
+      <p class="condition-desc">Chronic venous swelling, varicose veins, and phlebolymphedema. Supportive approaches for lasting comfort and relief.</p>
+    </div>
+    <div class="condition-card reveal reveal-delay-4">
+      <div class="condition-name">Travel & Lifestyle Swelling</div>
+      <p class="condition-desc">Frequent flyers, sedentary professionals, and active individuals experiencing swelling from daily life patterns.</p>
+    </div>
+    <div class="condition-card reveal reveal-delay-1">
+      <div class="condition-name">Post-Aesthetic Swelling</div>
+      <p class="condition-desc">Swelling following Botox, fillers, facial procedures, and med spa treatments. Supportive recovery techniques to ease discomfort.</p>
+    </div>
+    <div class="condition-card reveal reveal-delay-2">
+      <div class="condition-name">Orthopedic Recovery</div>
+      <p class="condition-desc">Joint replacement, sports injury, and orthopedic surgical recovery with swelling management as a core component.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OUTCOMES -->
+<div class="testimonials" id="testimonials">
+  <div class="testimonials-header reveal">
+    <div class="section-eyebrow">What To Expect</div>
+    <h2 class="section-title">What Consistent Practice <em>Delivers</em></h2>
+    <p style="font-size:0.9rem; color:var(--mid-grey); max-width:520px; margin: 16px auto 0; font-weight:300; line-height:1.85;">Lymphatic wellness is built through consistent, guided practice. Here is what participants in our programs typically experience over time.</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:#146C94; line-height:1;">2–3</div>
+        <div style="font-family:'Jost',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--mid-grey); margin-top:4px;">Sessions to Notice a Difference</div>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:300; font-style:italic; line-height:1.75; color:var(--charcoal);">Many participants begin to notice changes in how their body feels after just a few sessions of consistent breathwork and self-MLD practice.</p>
+    </div>
+
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:#146C94; line-height:1;">15+</div>
+        <div style="font-family:'Jost',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--mid-grey); margin-top:4px;">Years of Specialized Practice</div>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:300; font-style:italic; line-height:1.75; color:var(--charcoal);">Over a decade and a half of hands-on clinical experience across occupational therapy, lymphedema management, and advanced wound care, brought directly to you.</p>
+    </div>
+
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:#146C94; line-height:1;">CDT</div>
+        <div style="font-family:'Jost',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--mid-grey); margin-top:4px;">Informed Approach</div>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:300; font-style:italic; line-height:1.75; color:var(--charcoal);">Our sessions are informed by the principles of Complete Decongestive Therapy, an internationally recognized framework for lymphatic care and swelling management.</p>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(20,108,148,0.15); margin-top: 2px;">
+    <div class="testimonial-card reveal reveal-delay-1" style="text-align:center; padding: 36px 32px;">
+      <div style="font-family:'Jost',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#146C94; margin-bottom:12px;">Post-Surgical Participants</div>
+      <p style="font-size:0.85rem; line-height:1.8; color:var(--mid-grey); font-weight:300;">Supportive techniques for managing post-op swelling, improving comfort, and gradually returning to daily mobility and function.</p>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2" style="text-align:center; padding: 36px 32px;">
+      <div style="font-family:'Jost',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#146C94; margin-bottom:12px;">Chronic Condition Participants</div>
+      <p style="font-size:0.85rem; line-height:1.8; color:var(--mid-grey); font-weight:300;">Practical self-care tools for long-term swelling management, improved daily comfort, and greater independence in managing your condition.</p>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3" style="text-align:center; padding: 36px 32px;">
+      <div style="font-family:'Jost',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#146C94; margin-bottom:12px;">Wellness & Lifestyle Participants</div>
+      <p style="font-size:0.85rem; line-height:1.8; color:var(--mid-grey); font-weight:300;">Proactive lymphatic wellness strategies for reducing travel-related swelling, improving daily comfort, and supporting an active lifestyle.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-pattern"></div>
+  <div style="position: relative; z-index: 2;">
+    <div class="section-eyebrow reveal">Begin Today</div>
+    <h2 class="section-title reveal reveal-delay-1">You Deserve to Feel <em>Comfortable</em><br>in Your Own Body</h2>
+    <p class="section-subtitle reveal reveal-delay-2">Take the first step toward feeling better in your body. Our virtual programs are now open and welcoming new participants.</p>
+    <div class="cta-actions reveal reveal-delay-3">
+      <a href="https://calendly.com/admin-theswellingexpert/lymphatic-reset-group-session" target="_blank" class="btn-gold">Join a Group Session — From $49</a>
+      <a href="https://theswellingexpert.gumroad.com/l/arcfu" target="_blank" class="btn-ghost">Enroll in the Course — $97</a>
+    </div>
+    <p style="margin-top:32px; font-size:0.78rem; color:rgba(255,255,255,0.4); font-weight:300; letter-spacing:0.05em;">Questions? Email us at <a href="mailto:admin@theswellingexpert.com" style="color:#C9F0F0; text-decoration:none;">admin&#64;theswellingexpert&#46;com</a></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="footer-logo">The Swelling <span>Expert</span></span>
+    <p class="footer-tagline">Virtual lymphatic wellness programs and swelling relief for South Florida and beyond.</p>
+    <a href="mailto:admin@theswellingexpert.com" style="display:inline-block; margin-top:20px; font-size:0.78rem; color:rgba(255,255,255,0.5); font-weight:300; letter-spacing:0.05em; text-decoration:none; transition: color 0.3s;" onmouseover="this.style.color='#C9F0F0'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">admin&#64;theswellingexpert&#46;com</a>
+  </div>
+  <div>
+    <div class="footer-col-title">Programs</div>
+    <ul class="footer-links">
+      <li><a href="#group">Live Group Sessions</a></li>
+      <li><a href="#course">Swelling Relief Course</a></li>
+      <li><a href="back2life.html" target="_blank">Back 2 Life Program</a></li>
+      <li><a href="#offerings">4-Week Reset Program</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Conditions</div>
+    <ul class="footer-links">
+      <li><a href="#conditions">Post-Surgical Recovery</a></li>
+      <li><a href="#conditions">Lipedema</a></li>
+      <li><a href="#conditions">Venous Insufficiency</a></li>
+      <li><a href="#conditions">Travel Swelling</a></li>
+      <li><a href="#conditions">Orthopedic Recovery</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-copy">© 2026 The Swelling Expert LLC · All Rights Reserved · South Florida</span>
+  <span class="footer-badge">Certified Lymphedema & Wound Specialist</span>
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px'
